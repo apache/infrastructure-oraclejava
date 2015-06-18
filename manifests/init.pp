@@ -43,6 +43,14 @@ class java8 (
                           File['/tmp/java.preseed']
                         ],
       }
+      package { 'oracle-java8-unlimited-jce-policy':
+        ensure       => $ensure,
+        responsefile => '/tmp/java.preseed',
+        require      => [
+                          Apt::Ppa['ppa:webupd8team/java'],
+                          File['/tmp/java.preseed']
+                        ],
+      }
    }
    default: { notice "Unsupported operatingsystem ${::operatingsystem}" }
  }
