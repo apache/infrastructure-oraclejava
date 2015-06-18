@@ -1,12 +1,12 @@
-# Class: java7
+# Class: java8
 #
-# This module manages Oracle Java7
+# This module manages Oracle Java8
 # Parameters: none
 # Requires:
 #  apt
 # Sample Usage:
-#  include java7
-class java7 (
+#  include java8
+class java8 (
   $include_src = true,
   $ensure = 'installed',
 ) {
@@ -22,7 +22,7 @@ class java7 (
         key_server        => "keyserver.ubuntu.com",
         include_src       => $include_src,
       }
-      package { 'oracle-java7-installer':
+      package { 'oracle-java8-installer':
         ensure       => $ensure,
         responsefile => '/tmp/java.preseed',
         require      => [
@@ -35,7 +35,7 @@ class java7 (
      include apt
 
       apt::ppa { 'ppa:webupd8team/java': }
-      package { 'oracle-java7-installer':
+      package { 'oracle-java8-installer':
         ensure       => $ensure,
         responsefile => '/tmp/java.preseed',
         require      => [
@@ -50,7 +50,7 @@ class java7 (
   case $::operatingsystem {
     debian, ubuntu: {
       file { '/tmp/java.preseed':
-        source => 'puppet:///modules/java7/java.preseed',
+        source => 'puppet:///modules/java8/java.preseed',
         mode   => '0600',
         backup => false,
       }
