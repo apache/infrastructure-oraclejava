@@ -61,7 +61,7 @@ class oraclejava::install (
     }
   }
 
-  package { '$jdkpkg':
+  package { $jdkpkg:
     ensure       => $ensure,
     responsefile => '/tmp/java.preseed',
     require      => [
@@ -71,7 +71,7 @@ class oraclejava::install (
   }
 
   if $unlimited_jce {
-    package { '$jcepkg':
+    package { $jcepkg:
       ensure       => $ensure,
       responsefile => '/tmp/java.preseed',
       require      => [
