@@ -4,3 +4,6 @@ oracle-java8-installer	shared/accepted-oracle-license-v1-1	boolean	true
 oracle-java7-installer	shared/present-oracle-license-v1-1	note	
 oracle-java7-installer	oracle-java7-installer/local	string	
 oracle-java7-installer	shared/accepted-oracle-license-v1-1	boolean	true
+oracle-java6-installer	shared/present-oracle-license-v1-1	note	
+oracle-java6-installer	oracle-java6-installer/local	string	
+oracle-java6-installer	shared/accepted-oracle-license-v1-1	boolean	true

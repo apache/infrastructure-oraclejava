@@ -10,7 +10,7 @@
 #   include oraclejava::install
 
 class oraclejava::install (
-  $version = '8', # allowed values 7, 8
+  $version = '8', # allowed values 6, 7, 8
   $unlimited_jce = true,
   $include_src = true,
   $ensure = 'installed',
@@ -55,6 +55,10 @@ class oraclejava::install (
     7: {
       $jdkpkg = 'oracle-java7-installer'
       $jcepkg = 'oracle-java7-unlimited-jce-policy'
+    }
+    6: {
+      $jdkpkg = 'oracle-java6-installer'
+      $jcepkg = 'oracle-java6-unlimited-jce-policy'
     }
     default: {
       notice "Invalid Java version"
