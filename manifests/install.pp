@@ -58,7 +58,7 @@ class oraclejava::install (
     }
     6: {
       $jdkpkg = 'oracle-java6-installer'
-      $jcepkg = 'oracle-java6-unlimited-jce-policy'
+      $unlimited_jce = false # no jce package for java6
     }
     default: {
       notice "Invalid Java version"
