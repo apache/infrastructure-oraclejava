@@ -58,7 +58,6 @@ class oraclejava::install (
     }
     6: {
       $jdkpkg = 'oracle-java6-installer'
-      $unlimited_jce = false # no jce package for java6
     }
     default: {
       notice "Invalid Java version"
@@ -75,13 +74,15 @@ class oraclejava::install (
   }
 
   if $unlimited_jce {
-    package { $jcepkg:
-      ensure       => $ensure,
-      responsefile => '/tmp/java.preseed',
-      require      => [
-        Apt::Ppa['ppa:webupd8team/java'],
-        File['/tmp/java.preseed']
-      ],
+    if $jcepkg {
+      package { $jcepkg:
+        ensure       => $ensure,
+        responsefile => '/tmp/java.preseed',
+        require      => [
+          Apt::Ppa['ppa:webupd8team/java'],
+          File['/tmp/java.preseed']
+        ],
+      }
     }
   }
 }
