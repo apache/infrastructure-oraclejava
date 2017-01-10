@@ -69,7 +69,7 @@ class oraclejava::install (
     responsefile => '/tmp/java.preseed',
     require      => [
         Apt::Ppa['ppa:webupd8team/java'],
-        Exec['apt-get update'],
+        Class['apt::update'],
         File['/tmp/java.preseed']
     ],
   }
@@ -81,7 +81,7 @@ class oraclejava::install (
         responsefile => '/tmp/java.preseed',
         require      => [
           Apt::Ppa['ppa:webupd8team/java'],
-          Exec['apt-get update'],
+          Class['apt::update'],
           File['/tmp/java.preseed']
         ],
       }
