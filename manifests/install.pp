@@ -9,7 +9,7 @@
 #   oraclejava::install::unlimited_jce: true
 #   include oraclejava::install
 
-class oraclejava::install (
+class infrastructure_oraclejava::install (
   $version = '8', # allowed values 6, 7, 8
   $unlimited_jce = true,
   $include_src = true,
@@ -19,13 +19,13 @@ class oraclejava::install (
   case $::operatingsystem {
     debian: {
       include apt
-      apt::source { 'webupd8team': 
-        location          => "http://ppa.launchpad.net/webupd8team/java/ubuntu",
-        release           => "precise",
-        repos             => "main",
-        key               => "EEA14886",
-        key_server        => "keyserver.ubuntu.com",
-        include_src       => $include_src,
+      apt::source { 'webupd8team':
+        location    => 'http://ppa.launchpad.net/webupd8team/java/ubuntu',
+        release     => 'precise',
+        repos       => 'main',
+        key         => 'EEA14886',
+        key_server  => 'keyserver.ubuntu.com',
+        include_src => $include_src,
       }
       file { '/tmp/java.preseed':
         source => 'puppet:///modules/oraclejava/java.preseed',
@@ -42,8 +42,8 @@ class oraclejava::install (
         backup => false,
       }
     }
-    default: { 
-      notice "Unsupported operatingsystem ${::operatingsystem}" 
+    default: {
+      notice "Unsupported operatingsystem ${::operatingsystem}"
     }
   }
 
@@ -60,7 +60,7 @@ class oraclejava::install (
       $jdkpkg = 'oracle-java6-installer'
     }
     default: {
-      notice "Invalid Java version"
+      notice 'Invalid Java version'
     }
   }
 
