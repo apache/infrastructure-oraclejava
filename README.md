@@ -1,7 +1,7 @@
 # Oracle Java Puppet Module
 This module manages Oracle Java 8 and Java 7 with Unlimited JCE
 
-This module has been tested against Puppet 3.8 on Ubuntu 14.04
+This module has been tested against Puppet 6.4 on Ubuntu 18.04
 
 Pull requests welcome
 
