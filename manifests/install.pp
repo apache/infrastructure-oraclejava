@@ -9,7 +9,7 @@
 #   oraclejava::install::unlimited_jce: true
 #   include oraclejava::install
 
-class infrastructure_oraclejava::install (
+class oraclejava::install (
   $version = '8', # allowed values 6, 7, 8
   $unlimited_jce = true,
   $include_src = true,
