@@ -48,15 +48,15 @@ class oraclejava::install (
   }
 
   case $version {
-    8: {
+    '8': {
       $jdkpkg = 'oracle-java8-installer'
       $jcepkg = 'oracle-java8-unlimited-jce-policy'
     }
-    7: {
+    '7': {
       $jdkpkg = 'oracle-java7-installer'
       $jcepkg = 'oracle-java7-unlimited-jce-policy'
     }
-    6: {
+    '6': {
       $jdkpkg = 'oracle-java6-installer'
     }
     default: {
